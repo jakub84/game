@@ -1,3 +1,6 @@
+.input-field-body {
+    text-align: center;
+}
 .user-form {
     margin: 0 auto;
     width: 100%;
@@ -49,4 +52,23 @@
         min-width: 330px;
         border:none;
     }
+}
+
+.user-btn-generate {
+    padding: 20px 30px;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    outline: none;
+    min-width: 300px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: rgb(230, 107, 107);
+    color: aliceblue;
+    min-width: 100px;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
 }

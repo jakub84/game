@@ -1,6 +1,10 @@
 import React from 'react'
 const InputField = (props) => (
-    <div>
+    <div className="input-field-body">
+         <button
+            className="user-btn-generate"
+            onClick = {props.chooseBtn}
+            >Generate</button>
             <form className="user-form"
                 
                 onSubmit={props.onFormSubmit}
@@ -21,6 +25,7 @@ const InputField = (props) => (
             disabled = {props.isBtnDisabled}
             >Check</button>
             </form>
+           
     </div>
 );
 export default InputField
