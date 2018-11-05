@@ -60,6 +60,7 @@ class App extends React.Component {
       dinamicPassword: allPaswords[customNr].password,
       category: allPaswords[customNr].category
     })
+    
   }
 
   onFormSubmit = (e) => {
