@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+.print-answer {
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 100%;
+    text-align: center;
+    margin: 40px 0 10px 0;
+    p {
+        padding: 5px 0;
+    }
+    .pass-info {
+        font-size: 18px;
+        span {
+            font-size: 22px;
+            color: rgb(204, 66, 66);
+        }
+    }
+    .category {
+        font-size: 14px;
+        span {
+            font-size: 22px;
+            color: rgb(204, 66, 66);
+        }
+    }
+    .pass {
+        margin-top:20px;
+        font-size: 48px;
+        text-transform: uppercase;
+        
+    }
+}
