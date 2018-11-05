@@ -1,4 +1,8 @@
 import React from 'react';
+import Header from './Header'
+import InputField from './InputField'
+import PrintAnswer from './PrintAnswer'
+import DrawImage from './DrawImage'
 
 
 class App extends React.Component {
@@ -7,7 +11,10 @@ class App extends React.Component {
 
     return (
       <div>
-        test
+        <Header />
+        <InputField />
+        <PrintAnswer />
+        <DrawImage />
       </div>
     );
   }
