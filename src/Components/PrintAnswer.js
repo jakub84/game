@@ -1,7 +1,7 @@
 import React from 'react'
-const PrintAnswer = () => (
+const PrintAnswer = (props) => (
     <div>
-        Here is an Answer
+        Your password has {props.password.length} letters: {props.password}
     </div>
 );
 export default PrintAnswer
