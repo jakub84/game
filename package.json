@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
+  "homepage": "https://jakub84.github.io/game-find-a-word/",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "./node_modules/.bin/webpack --mode production"
+    "build": "./node_modules/.bin/webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "autoprefixer": "^9.2.1",
@@ -33,6 +36,7 @@
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react-qr-svg": "^2.1.0"
   }
 }
