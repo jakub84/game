@@ -1,0 +1,160 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.header {
+  width: 100%;
+  padding: 30px;
+  background-color: antiquewhite;
+  margin: 0 auto; }
+  .header-container {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto; }
+    .header-container-logo {
+      font-family: 'Indie Flower', cursive;
+      font-size: 20px;
+      text-align: center; }
+
+.input-field-body {
+  text-align: center; }
+
+.user-form {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .user-form-input, .user-form-btn {
+    padding: 20px 30px;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    outline: none;
+    min-width: 300px;
+    margin-bottom: 10px;
+    border-radius: 10px; }
+  .user-form-input {
+    border: 1px solid #e7e7e7; }
+  .user-form-btn {
+    padding: 10px 20px;
+    background-color: #e66b6b;
+    color: aliceblue;
+    min-width: 100px; }
+  .user-form-btn:hover {
+    background-color: #4ae9ac;
+    cursor: pointer;
+    color: #414141; }
+  .user-form-btn:disabled {
+    background-color: #c9c9c9;
+    color: grey; }
+  .user-form-input:disabled {
+    background-color: #cfcccc;
+    color: grey; }
+  .user-form-input:focus {
+    -webkit-box-shadow: 0px 11px 19px -8px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 11px 19px -8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 11px 19px -8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+    min-width: 330px;
+    border: none; }
+
+.user-btn-generate {
+  padding: 20px 30px;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  outline: none;
+  min-width: 300px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #e66b6b;
+  color: aliceblue;
+  min-width: 100px;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center; }
+
+.score {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Indie Flower', cursive; }
+  .score-winner, .score-looser {
+    font-size: 30px; }
+  .score-winner {
+    color: #bee682; }
+  .score-looser {
+    color: #fc5656; }
+
+.print-answer {
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 100%;
+  text-align: center;
+  margin: 40px 0 10px 0; }
+  .print-answer p {
+    padding: 5px 0; }
+  .print-answer .pass-info {
+    font-size: 18px; }
+    .print-answer .pass-info span {
+      font-size: 22px;
+      color: #cc4242; }
+  .print-answer .category {
+    font-size: 14px; }
+    .print-answer .category span {
+      font-size: 22px;
+      color: #cc4242; }
+  .print-answer .pass {
+    margin-top: 20px;
+    font-size: 48px;
+    text-transform: uppercase; }
+
+body {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.04);
+  padding-bottom: 30px; }
+
+body * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: all 0.3s;
+  box-sizing: border-box; }
