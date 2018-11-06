@@ -43,10 +43,10 @@ class App extends React.Component {
     this.state = {
       UserAnswer: '',
       placeholder:'Type your answer',
-      dinamicPassword: 'Hello',
+      dinamicPassword: '',
       isSucces: false,
       isLoose: false,
-      counter: 1,
+      counter: 0,
       compareAnswers:[],
       category:''
     }
@@ -60,7 +60,6 @@ class App extends React.Component {
       dinamicPassword: allPaswords[customNr].password,
       category: allPaswords[customNr].category
     })
-    
   }
 
   onFormSubmit = (e) => {
@@ -71,7 +70,7 @@ class App extends React.Component {
       counter: this.state.counter + 1
       
     })
-    this.looseGame()
+    // this.looseGame()
   }
   onChangeInput = (e) => {
     this.setState({
@@ -80,43 +79,63 @@ class App extends React.Component {
     })
 
   }
+  // checkAnswers = (userAnswer, pass) => {
+  //   let newTab = []
+  //   userAnswer = userAnswer.toLowerCase().split('')
+  //   pass = pass.toLowerCase().split('')
+  //   userAnswer.forEach((userAnswers, i) => {
+  //     pass.forEach((passwords, j) => {
+  //       if (userAnswers === passwords && i === j) {
+  //           newTab.push(passwords)
+  //         return
+  //       } else if (userAnswers !== passwords && i === j) {
+  //         newTab.push('*')
+  //       } else if (i > j) {
+  //         return
+  //       }
+  //     })
+  //   })
+  //   this.state.compareAnswers = newTab
+  //   if (this.state.compareAnswers.includes('*') || userAnswer.length !== pass.length) {
+  //     this.setState({
+  //       isSucces: false
+  //     })
+  //   } else {
+  //     this.setState({
+  //       isSucces: true
+  //     })
+  //   }
+
+  //   console.log(this.state.compareAnswers, this.state.isSucces, this.state.counter)
+  // }
+
+
   checkAnswers = (userAnswer, pass) => {
     let newTab = []
     userAnswer = userAnswer.toLowerCase().split('')
     pass = pass.toLowerCase().split('')
-    userAnswer.forEach((userAnswers, i) => {
-      pass.forEach((passwords, j) => {
-        if (userAnswers === passwords && i === j) {
-            newTab.push(passwords)
-          return
-        } else if (userAnswers !== passwords && i === j) {
-          newTab.push('*')
-        } else if (i > j) {
-          return
-        }
-      })
-    })
+    pass.filter((val) => {
+     if (userAnswer.includes(val)) newTab.push(val)
+     else if (!userAnswer.includes(val)) newTab.push('*')  
+  })
     this.state.compareAnswers = newTab
     if (this.state.compareAnswers.includes('*') || userAnswer.length !== pass.length) {
-      this.setState({
-        isSucces: false
-      })
-    } else {
-      this.setState({
-        isSucces: true
-      })
-    }
-
-    console.log(this.state.compareAnswers, this.state.isSucces, this.state.counter)
-  }
-
-  looseGame() {
-    if(this.state.counter === 5) {
-      this.setState({
-        isLoose: true,
-        placeholder:'the end'
-      })
-    }
+          this.setState({
+            isSucces: false
+          })
+        } else if (this.state.counter === 5) {
+          this.setState({
+            isLoose: false
+          })
+        } 
+        
+        else {
+          this.setState({
+            isSucces: true
+          })
+        }
+    
+        console.log(this.state.compareAnswers, this.state.isSucces, this.state.counter)
   }
 
   render() {
@@ -131,7 +150,7 @@ class App extends React.Component {
           isLoose={this.state.isLoose}
         />
         <PrintAnswer
-          password={this.state.dinamicPassword}
+          password={this.state.compareAnswers}
           category = {this.state.category}
           />
         <InputField
@@ -142,8 +161,10 @@ class App extends React.Component {
           checkAnswers={() => this.checkAnswers(this.state.UserAnswer, this.state.dinamicPassword)}
           maxLength={this.state.dinamicPassword.length}
           isBtnDisabled={this.state.isSucces || this.state.isLoose}
-          isInputDisabled={this.state.isSucces || this.state.isLoose}
+          isInputDisabled={this.state.isSucces || this.state.isLoose || this.state.counter === 0}
           chooseBtn = {() => this.letChoosePassword(allPaswords.length)}
+          btnValue = {this.state.counter === 0 ? 'start' : 'check'}
+          counter = {this.state.counter}
         />
 
         {/* <DrawImage /> */}

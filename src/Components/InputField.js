@@ -23,7 +23,7 @@ const InputField = (props) => (
             className="user-form-btn"
             onClick = {props.checkAnswers}
             disabled = {props.isBtnDisabled}
-            >Check</button>
+            >{props.btnValue}</button>
             </form>
            
     </div>
