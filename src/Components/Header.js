@@ -3,7 +3,7 @@ const Header = () => (
     <div className="header">
         <div className="header-container">
             <div className="header-container-logo">
-                Wisielec
+                {/* Wisielec */}
             </div>
         </div>
     </div>
