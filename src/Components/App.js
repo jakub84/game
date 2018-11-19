@@ -50,20 +50,24 @@ class App extends React.Component {
       dinamicPassword: '',
       isSucces: false,
       isLoose: false,
-      counter: 0,
+      counter: 6,
       compareAnswers: [],
       category: '',
       hiddenPassword: []
     }
   }
 
+  componentDidMount() {
+    this.letChoosePassword(allPaswords.length)
+  }
+
   looseGame() {
-    if(this.state.counter > 5) {
+    
       this.setState({
         isSucces: false,
         isLoose: true
       })
-    }
+   
   }
 
   letChoosePassword = (max) => {
@@ -83,18 +87,32 @@ class App extends React.Component {
     console.log(this.state.hiddenPassword)
   }
 
+  checkYourLives = () => {
+    let lives = this.state.counter
+    this.setState({
+      counter: this.state.counter-1
+    })
+    if(lives === 0) {
+      this.looseGame()
+    }
+
+
+  }
+
 
   onClickLetters = (e) => {
 
     e.target.disabled = true
     this.setState({
       UserAnswer: e.target.value,
-      counter: this.state.counter + 1,
+      // counter: this.state.counter + 1,
     })
-    this.looseGame()
+  
     this.checkAnswers(e.target.value,this.state.dinamicPassword)
     console.log(this.state.counter)
   }
+
+  
 
   checkAnswers = (userLetter, pass) => {
     console.log(userLetter)
@@ -102,20 +120,25 @@ class App extends React.Component {
     pass = pass.toLowerCase().split('')
     userAnsToCheck.push(userLetter)
     console.log(userAnsToCheck)
-    pass.filter((val) => {
+
+   
+
+    pass.forEach((val) => {
           if (userAnsToCheck.includes(val)) {
-            console.log('plus')
-            newTab.push(val)}
-          else if (!userAnsToCheck.includes(val)) {
-            newTab.push('_')
+            newTab.push(val)
+            return
           }
-        })
+          else {
+            newTab.push('_')
+          }})
+          
+  
         this.state.compareAnswers = newTab
         if (this.state.compareAnswers.includes('_')) {
               this.setState({
                 isSucces: false
               })
-            } else if (this.state.counter === 5) {
+            } else if (this.state.counter === 0) {
               this.setState({
                 isLoose: false
               })
@@ -144,7 +167,7 @@ class App extends React.Component {
           password={this.state.compareAnswers}
           // hiddenPassword={this.state.compareAnswers.fill('-')}
           category={this.state.category}
-          tries = {5 - this.state.counter}
+          tries = {this.state.counter}
         />
       <Letters
       onClickLetters ={this.onClickLetters}

@@ -26,7 +26,7 @@ const Letters = (props) => (
         <input className="letter" type="button" onClick = {props.onClickLetters} disabled={props.isDisabled} value="z"/>
         
         
-        <input className="letter" type="button" onClick = {props.letFindPass} value="Password"/>
+        {/* <input className="letter" type="button" onClick = {props.letFindPass} value="Password"/> */}
 
     </div>
 );
