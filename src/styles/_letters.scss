@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 .letters-container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 600px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -9,8 +9,8 @@
         margin: 5px;
         padding: 10px;
         display: block;
-        min-width: 40px;
-        min-height: 40px;
+        min-width: 50px;
+        min-height: 50px;
         border: none;
         outline: none;
         cursor: pointer;
