@@ -133,7 +133,7 @@ class App extends React.Component {
 
     return (
 
-      <div>
+      <div className="main-container">
 
         <Header />
         <Score
