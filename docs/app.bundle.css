@@ -129,7 +129,8 @@ table {
   font-family: 'Roboto Condensed', sans-serif;
   width: 100%;
   text-align: center;
-  margin: 40px 0 10px 0; }
+  margin: 40px 0 10px 0;
+  line-height: 22px; }
   .print-answer p {
     padding: 5px 0; }
   .print-answer .pass-info {

@@ -14,7 +14,6 @@ import skull_7 from '../images/7.png'
 
 
 let userAnsToCheck = []
-let letterInputs = document.querySelectorAll('.letter')
 const allPaswords = [
   {
     password: 'John',
