@@ -17,8 +17,8 @@ let userAnsToCheck = []
 let letterInputs = document.querySelectorAll('.letter')
 const allPaswords = [
   {
-    password: 'Gniewomir',
-    category: 'Imię'
+    password: 'John',
+    category: 'Name'
   },
   {
     password: 'Prince',
@@ -34,27 +34,39 @@ const allPaswords = [
   },
   {
     password: 'Radom',
-    category: 'Miasto'
+    category: 'Town'
   },
   {
-    password: 'Kot',
-    category: 'Zwierzak'
+    password: 'Cat',
+    category: 'Animal'
   },
   {
-    password: 'Lama',
-    category: 'Więcej niz jedno zwierze'
+    password: 'dingding',
+    category: 'What does a fox says?'
   },
   {
-    password: 'Kontrabas',
-    category: 'Instrument'
+    password: 'interstellar',
+    category: 'Movie'
   },
   {
     password: 'Sosnowiec',
-    category: 'Miasto'
+    category: 'Town'
   },
   {
     password: 'Slayer',
     category: 'Music Band'
+  },
+  {
+    password: 'Neptun',
+    category: 'Cosmos'
+  },
+  {
+    password: 'Mazowiecka',
+    category: 'Street name'
+  },
+  {
+    password: 'tarantula',
+    category: 'Animal'
   },
 ]
 
