@@ -41,5 +41,19 @@
             transform: scale(1)
         }
         }
+    &.next-game {
+        background-color: aqua;
+        &:hover {
+            background-color: rgb(255, 20, 20);
+            -webkit-box-shadow: 0px 11px 19px -8px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0px 11px 19px -8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 11px 19px -8px rgba(0, 0, 0, 0.15);
+            font-size: 18px;
+            color:#fff;
+            border-radius:0px;
+            transform: scale(1);
+            border-radius: 5px;
     }
+}}
+
 }
