@@ -12,6 +12,7 @@
         span {
             font-size: 22px;
             color: rgb(204, 66, 66);
+            
         }
     }
     .category {
@@ -25,6 +26,31 @@
         margin-top:20px;
         font-size: 48px;
         text-transform: uppercase;
+        letter-spacing: 5px;
+        animation-name: letters-animation;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
         
     }
 }
+
+
+@keyframes letters-animation {
+    0% {
+        letter-spacing: 5px;
+    }
+    3% {
+        letter-spacing: 4px;
+    }
+    7% {
+        letter-spacing: 6px;
+    }
+
+    10% {
+        letter-spacing: 4px;
+    }
+    13% {
+        letter-spacing: 5px;
+    }
+  }

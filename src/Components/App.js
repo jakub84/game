@@ -68,6 +68,18 @@ const allPaswords = [
     password: 'tarantula',
     category: 'Animal'
   },
+  {
+    password: 'silkworm',
+    category: 'Animal'
+  },
+  {
+    password: 'antelope',
+    category: 'Animal'
+  },
+  {
+    password: 'cuckoo',
+    category: 'Animal'
+  },
 ]
 
 
