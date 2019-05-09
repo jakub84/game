@@ -1,3 +1,5 @@
+https://jakub84.github.io/game/
+
 # react-webpack-babel-kit
 
 A simple hello world using react, webpack, babel, es2015 & sass. 
