@@ -60,7 +60,6 @@ class App extends React.Component {
     this.setState({
       counter: this.state.counter - 1
     });
-    console.log("counter = ", this.state.counter);
     if (lives === 0) {
       this.looseGame();
     }
@@ -73,52 +72,36 @@ class App extends React.Component {
     });
 
     this.checkAnswers(event.target.value, this.state.dinamicPassword);
-    console.log(this.state.counter);
   };
 
-  checkAnswers = (userLetter, pass) => {
-    let userAnsToCheck = [];
-    console.log(userLetter);
-    let newTab = [];
-    pass = pass.toLowerCase().split("");
-    userAnsToCheck.push(userLetter);
-    console.log(userAnsToCheck);
+  checkAnswers = (userLetter, password) => {
+    const { compareAnswers } = this.state;
+    let answer = [];
+    password = password.toLowerCase().split("");
+    password.map(passwordItem => (
+      password.includes(userLetter) ? answer = [...answer, passwordItem] : answer = [...answer, "-"]
+    ));
 
-    pass.forEach(val => {
-      if (userAnsToCheck.includes(val)) {
-        this.setState({
-          compareAnswers: this.state.compareAnswers.push(val)
-        });
-        return;
-      } else if (!userAnsToCheck.includes(val)) {
-        this.setState({
-          compareAnswers: this.state.compareAnswers.push("-")
-        });
-      }
-    });
 
-    if (pass.indexOf(userLetter) === -1) {
+    console.log(`password: ${password.toUpperCase()}, letter: ${userLetter.toUpperCase()}, answer : ${answer}`);
+
+
+
+
+
+    this.setState({compareAnswers: answer})
+
+
+
+    if (password.indexOf(userLetter) === -1) {
       this.checkYourLives();
     }
 
 
-    if (this.state.compareAnswers.includes("_")) {
-      this.setState({
-        isSucces: false
-      });
-    } else if (this.state.counter === 0) {
-      this.setState({
-        isLoose: false
-      });
-    } else {
-      this.setState({
-        isSucces: true
-      });
-    }
+
   };
 
   render() {
-    console.log(this.state.dinamicPassword);
     return (
       <div className='main-container'>
         <div className='image-container'>
@@ -148,7 +131,7 @@ class App extends React.Component {
         <Score isWinner={this.state.isSucces} isLoose={this.state.isLoose} />
         <PrintAnswer
           password={this.state.compareAnswers}
-          hiddenPassword={this.state.compareAnswers.fill("-")}
+          // hiddenPassword={this.state.compareAnswers.fill("-")}
           category={this.state.category}
           tries={this.state.counter}
         />
