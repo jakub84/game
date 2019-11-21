@@ -79,11 +79,11 @@ class App extends React.Component {
     let answer = [];
     password = password.toLowerCase().split("");
     password.map(passwordItem => (
-      password.includes(userLetter) ? answer = [...answer, passwordItem] : answer = [...answer, "-"]
+      passwordItem.includes(userLetter) ? answer = [...answer, userLetter] : answer = [...answer, "-"]
     ));
 
 
-    console.log(`password: ${password.toUpperCase()}, letter: ${userLetter.toUpperCase()}, answer : ${answer}`);
+    console.log(`password: ${password}, letter: ${userLetter}, answer : ${answer}`);
 
 
 
