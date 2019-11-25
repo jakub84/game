@@ -11,6 +11,7 @@ import skull_5 from "../images/5.png";
 import skull_6 from "../images/6.png";
 import skull_7 from "../images/7.png";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +25,9 @@ class App extends React.Component {
       counter: 6,
       compareAnswers: [],
       category: "",
-      hiddenPassword: []
+      hiddenPassword: [], 
+      checkTab: [],
+      gameCounter: "",
     };
   }
 
@@ -75,31 +78,51 @@ class App extends React.Component {
   };
 
   checkAnswers = (userLetter, password) => {
-    const { compareAnswers } = this.state;
-    let answer = [];
+    const { checkTab } = this.state;
+    let emptyTab = []
     password = password.toLowerCase().split("");
-    password.map(passwordItem => (
-      passwordItem.includes(userLetter) ? answer = [...answer, userLetter] : answer = [...answer, "-"]
-    ));
-
-
-    console.log(`password: ${password}, letter: ${userLetter}, answer : ${answer}`);
-
-
-
-
-
-    this.setState({compareAnswers: answer})
-
-
-
-    if (password.indexOf(userLetter) === -1) {
-      this.checkYourLives();
+    checkTab.push(userLetter);
+    password.forEach((val) => {
+      if (checkTab.includes(val)) {
+        emptyTab.push(val)
+        return
+      }
+      else if (!checkTab.includes(val)) {
+        emptyTab.push('_')
+      }
+      if(password.indexOf(userLetter) === -1) {
+        this.checkYourLives()
+      }
+    })
+    this.setState({compareAnswers: emptyTab})
+    if (this.state.compareAnswers.includes('_')) {
+      this.setState({
+        isSucces: false
+      })
+    } else if (this.state.counter === 0) {
+      this.setState({
+        isLoose: false
+      })
     }
-
-
-
   };
+
+  restartGame = () => {
+    this.setState({
+      UserAnswer: "",
+      isDisabled: false,
+      dinamicPassword: "",
+      isSucces: false,
+      isLoose: false,
+      counter: this.state.counter,
+      compareAnswers: [],
+      category: "",
+      hiddenPassword: [], 
+      checkTab: [],
+      gameCounter: this.state.gameCounter + 1,
+    })
+    this.letChoosePassword(allPaswords.length);
+
+  }
 
   render() {
     return (
@@ -137,8 +160,8 @@ class App extends React.Component {
         />
         <Letters
           onClickLetters={this.onClickLetters}
-          letFindPass={() => this.letChoosePassword(allPaswords.length)}
           isDisabled={this.state.isLoose || this.state.isSucces}
+          restartGame={this.restartGame}
         />
       </div>
     );

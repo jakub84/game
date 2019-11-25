@@ -24,7 +24,7 @@ const Letters = (props) => (
         <input className="letter" type="button" onClick = {props.onClickLetters} disabled={props.isDisabled} value="w"/>
         <input className="letter" type="button" onClick = {props.onClickLetters} disabled={props.isDisabled} value="y"/>
         <input className="letter" type="button" onClick = {props.onClickLetters} disabled={props.isDisabled} value="z"/>
-        <input className="next-game" type="button" onClick = {() => location.reload()} value="New Game"/>
+        <input className="next-game" type="button" onClick = {props.restartGame} value="New Game"/>
         
         
         {/* <input className="letter" type="button" onClick = {props.letFindPass} value="Password"/> */}
